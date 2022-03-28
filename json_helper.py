@@ -1,5 +1,6 @@
 import json
 import os
+import pickle
 
 
 def read_json(file_path):
@@ -14,7 +15,13 @@ def read_all_json_files(file_path):
         with open(full_filename, 'r') as f:
             temp_dict = json.load(f)
             all_json_files.append(temp_dict)
-
     return all_json_files
 
-print(read_all_json_files('/Users/joe/PycharmProjects/Python9Ex/data/super_smash_bros/'))
+def write_pickle(file_path):
+    pickle_file = open('pickle_file', 'wb')
+    pickle.dump(file_path, pickle_file)
+
+def load_pickle(file_path):
+    load_file = open(path, 'rb')
+    return pickle.load(load_file)
+
